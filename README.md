@@ -1,4 +1,8 @@
 # Python Chinese Pornounce
+- 文字轉注音/拼音
+- 注音/拼音轉文字
+- 相似發聲字
+> 資料來源：[政府開放資料](https://data.gov.tw/dataset/5961)
 ## Install
 ```sh
 pip install -U git+https://github.com/p208p2002/py-chinese-pornounce.git
