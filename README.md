@@ -1,5 +1,8 @@
 # Python Chinese Pornounce
 ## Install
+```sh
+pip install -U git+https://github.com/p208p2002/py-chinese-pornounce.git
+```
 ## Usage
 ```python
 from py_chinese_pornounce import Word2Pornounce,WordPornounceFinder
