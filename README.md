@@ -1,4 +1,4 @@
-# Python Chinese pronounce
+# Python Chinese Pronounce
 - 文字轉注音、漢語發音
 - 注音、漢語發音轉文字
 - 尋找相似、相同發聲字/單詞
