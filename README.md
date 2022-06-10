@@ -29,6 +29,14 @@ w2p.to_chewin("我") # ㄨㄛˇ
 ```python
 w2p.to_han("我") # wo3
 ```
+
+#### 其他轉換
+- Word2Pornounce._word2unicode(self, x)
+- Word2Pornounce._uni2word(self,uni)
+- Word2Pornounce._cns2word(self,cns)
+- Word2Pornounce._uni2cns(self, uni)
+> CNS: [中文標準交換碼](https://www.cns11643.gov.tw/index.jsp)
+
 ### Pornounce2Word
 僅支援*單一文字*查詢
 
