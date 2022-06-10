@@ -17,10 +17,10 @@ pip install -U git+https://github.com/p208p2002/py-chinese-pronounce.git
 ```
 ## Usage
 ```python
-from py_chinese_pronounce import Word2pronounce,pronounce2Word
+from py_chinese_pronounce import Word2pronounce,Pronounce2Word
 
 w2p = Word2pronounce()
-p2w = pronounce2Word()
+p2w = Pronounce2Word()
 ```
 ### Word2pronounce
 僅支援*單一文字*轉換
