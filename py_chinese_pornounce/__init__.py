@@ -85,7 +85,7 @@ class Word2Pornounce():
 
 
     
-class WordPornounceFinder(Word2Pornounce):
+class Pornounce2Word(Word2Pornounce):
     def __init__(self) -> None:
         super().__init__()
         self._setup_chewin2word_map()
