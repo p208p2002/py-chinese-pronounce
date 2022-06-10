@@ -1,25 +1,28 @@
-# Python Chinese Pornounce
+# Python Chinese pronounce
 - 文字轉注音、漢語發音
 - 注音、漢語發音轉文字
-- 尋找相似發聲字
+- 尋找相似、相同發聲字/單詞
+
 > 資料來源：[政府開放資料](https://data.gov.tw/dataset/5961)
+> [超齊百萬字典檔](https://github.com/samejack/sc-dictionary)
+
 ## Install
 ### From PyPI
 ```sh
-pip install py-chinese-pornounce
+pip install py-chinese-pronounce
 ```
 ### From Repo
 ```sh
-pip install -U git+https://github.com/p208p2002/py-chinese-pornounce.git
+pip install -U git+https://github.com/p208p2002/py-chinese-pronounce.git
 ```
 ## Usage
 ```python
-from py_chinese_pornounce import Word2Pornounce,Pornounce2Word
+from py_chinese_pronounce import Word2pronounce,pronounce2Word
 
-w2p = Word2Pornounce()
-p2w = Pornounce2Word()
+w2p = Word2pronounce()
+p2w = pronounce2Word()
 ```
-### Word2Pornounce
+### Word2pronounce
 僅支援*單一文字*轉換
 #### 文字轉注音
 ```python
@@ -31,13 +34,13 @@ w2p.to_han("我") # wo3
 ```
 
 #### 其他轉換
-- Word2Pornounce._word2unicode(self, x)
-- Word2Pornounce._uni2word(self,uni)
-- Word2Pornounce._cns2word(self,cns)
-- Word2Pornounce._uni2cns(self, uni)
+- Word2pronounce._word2unicode(self, x)
+- Word2pronounce._uni2word(self,uni)
+- Word2pronounce._cns2word(self,cns)
+- Word2pronounce._uni2cns(self, uni)
 > CNS: [中文標準交換碼](https://www.cns11643.gov.tw/index.jsp)
 
-### Pornounce2Word
+### pronounce2Word
 僅支援*單一文字*查詢
 
 #### 注音找文字 
@@ -62,4 +65,16 @@ p2w.find_same("我")
 ```python
 p2w.find_similar("我")
 # ['蠖', '臥', '䇶', '䂺', '䪝', '捾', '偓', '握', '捰', '卧', '雘', '㦱', '濣', '䠎', '楃', '沃', '渥', '䁊', '涴', '幄', '龌', '㓇', '矱', '斡', '㠛', '肟', '齷', '仴', '䰀', '婑', '喔', '腛', '䀑']
+```
+
+#### 相似發聲單詞
+```python
+p2w.find_similar_vocab("汽車")
+# ['七尺', '棋車', '棋车', '气车', '氣車', '汽车', '騎車', '骑车']
+```
+
+#### 相同發聲單詞
+```python
+p2w.find_same_vocab("汽車")
+# ['气车', '氣車', '汽车']
 ```

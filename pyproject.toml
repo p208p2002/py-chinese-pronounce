@@ -1,9 +1,9 @@
 [tool.poetry]
-name = "py-chinese-pornounce"
+name = "py-chinese-pronounce"
 version = "0.1.1"
 description = ""
 authors = ["Philip Huang <p208p2002@gmail.com>"]
-include = ["py_chinese_pornounce/*.txt"]
+include = ["py_chinese_pronounce/*.txt"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
