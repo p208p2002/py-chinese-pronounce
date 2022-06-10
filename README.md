@@ -41,7 +41,7 @@ w2p.to_han("我") # wo3
 - Word2pronounce._uni2cns(self, uni)
 > CNS: [中文標準交換碼](https://www.cns11643.gov.tw/index.jsp)
 
-### pronounce2Word
+### Pronounce2Word
 僅支援*單一文字*查詢
 
 #### 注音找文字 
