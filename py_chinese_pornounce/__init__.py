@@ -123,7 +123,7 @@ class Pornounce2Word(Word2Pornounce):
         han = self.to_han(x)
         base_tune = re.sub('[2-5]',"",han)
         out = []
-        for tune in range(2,5+1):
+        for tune in ['','2','3','4','5']:
             new_han = f"{base_tune}{tune}"
             similar_results = self.han2word(new_han)
             out += similar_results

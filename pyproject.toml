@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "py-chinese-pornounce"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Philip Huang <p208p2002@gmail.com>"]
 include = ["py_chinese_pornounce/*.txt"]
