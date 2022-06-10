@@ -4,6 +4,7 @@
 - 尋找相似、相同發聲字/單詞
 
 > 資料來源：[政府開放資料](https://data.gov.tw/dataset/5961)
+
 > [超齊百萬字典檔](https://github.com/samejack/sc-dictionary)
 
 ## Install
