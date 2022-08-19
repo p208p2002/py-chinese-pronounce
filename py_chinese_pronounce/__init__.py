@@ -1,4 +1,3 @@
-from loguru import logger
 import re
 import os
 from collections import defaultdict
