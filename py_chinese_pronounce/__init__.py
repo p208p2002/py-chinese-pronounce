@@ -2,7 +2,7 @@ import re
 import os
 from collections import defaultdict
 
-class Word2pronounce():
+class Word2Pronounce():
     def __init__(self) -> None:
 
         # uni2cns map
@@ -82,9 +82,7 @@ class Word2pronounce():
     def to_han(self, x):
         return self._chewin2han(self.to_chewin(x))
 
-
-    
-class Pronounce2Word(Word2pronounce):
+class Pronounce2Word(Word2Pronounce):
     def __init__(self) -> None:
         super().__init__()
         self._setup_chewin2word_map()
@@ -170,3 +168,6 @@ class Pronounce2Word(Word2pronounce):
         same = self.sc_dict_han_map[vp_key]
         same.remove(vocab)
         return same
+
+# For compatibility
+Word2pronounce = Word2Pronounce

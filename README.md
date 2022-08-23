@@ -16,12 +16,12 @@ pip install -U git+https://github.com/p208p2002/py-chinese-pronounce.git
 ```
 ## Usage
 ```python
-from py_chinese_pronounce import Word2pronounce,Pronounce2Word
+from py_chinese_pronounce import Word2Pronounce,Pronounce2Word
 
-w2p = Word2pronounce()
+w2p = Word2Pronounce()
 p2w = Pronounce2Word()
 ```
-### Word2pronounce
+### Word2Pronounce
 僅支援*單一文字*轉換
 #### 文字轉注音
 ```python
@@ -33,10 +33,10 @@ w2p.to_han("我") # wo3
 ```
 
 #### 其他轉換
-- Word2pronounce._word2unicode(self, x)
-- Word2pronounce._uni2word(self,uni)
-- Word2pronounce._cns2word(self,cns)
-- Word2pronounce._uni2cns(self, uni)
+- Word2Pronounce._word2unicode(self, x)
+- Word2Pronounce._uni2word(self,uni)
+- Word2Pronounce._cns2word(self,cns)
+- Word2Pronounce._uni2cns(self, uni)
 > CNS: [中文標準交換碼](https://www.cns11643.gov.tw/index.jsp)
 
 ### Pronounce2Word

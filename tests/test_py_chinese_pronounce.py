@@ -1,6 +1,6 @@
-from py_chinese_pronounce import Word2pronounce,Pronounce2Word
+from py_chinese_pronounce import Word2Pronounce,Pronounce2Word
 
-w2p = Word2pronounce()
+w2p = Word2Pronounce()
 p2w = Pronounce2Word()
 
 def test_to_chewin():
