@@ -1,6 +1,8 @@
 import re
 import os
 from collections import defaultdict
+import editdistance
+from functools import lru_cache
 
 class Word2Pronounce():
     def __init__(self) -> None:
@@ -168,6 +170,16 @@ class Pronounce2Word(Word2Pronounce):
         same = self.sc_dict_han_map[vp_key]
         same.remove(vocab)
         return same
+
+    @lru_cache(maxsize=200)
+    def _find_similar_han_pronounces(self,han,level=1):
+        out = []
+        for compare_han in self.han2word_map.keys():
+            ed_step = editdistance.eval(han,compare_han)
+            if ed_step <= level:
+                out.append(compare_han)
+        return out
+    
 
 # For compatibility
 Word2pronounce = Word2Pronounce

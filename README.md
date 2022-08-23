@@ -77,3 +77,10 @@ p2w.find_similar_vocab("汽車")
 p2w.find_same_vocab("汽車")
 # ['气车', '氣車', '汽车']
 ```
+
+#### 其他轉換
+- Pronounce2Word._find_similar_han_pronounces(self,han,level=1)
+
+    尋找相似發音
+    - han: 漢語發音
+    - level: 編輯距離（越大越寬鬆）

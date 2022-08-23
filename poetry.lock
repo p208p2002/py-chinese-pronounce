@@ -29,6 +29,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "editdistance"
+version = "0.6.0"
+description = "Fast implementation of the edit distance(Levenshtein distance)"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
 name = "importlib-metadata"
 version = "4.11.4"
 description = "Read metadata from Python packages"
@@ -151,7 +159,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.6.9"
-content-hash = "61e52a5034dcef937c2ac03f84a4fa099e6c6e31a37020a1a1c8a768db3ec4fa"
+content-hash = "84b6aaa4cce96860d2302ae27553d1279d47c86e323114f295b7beff1d8cc6f1"
 
 [metadata.files]
 atomicwrites = [
@@ -165,6 +173,59 @@ attrs = [
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
+]
+editdistance = [
+    {file = "editdistance-0.6.0-cp35-cp35m-macosx_10_9_x86_64.whl", hash = "sha256:49a4d918922993eb33965e836b1df4dcbc2cda7a25e912deccd55622fafd780a"},
+    {file = "editdistance-0.6.0-cp35-cp35m-manylinux1_i686.whl", hash = "sha256:73f5c0a4694e8bc5c20ff77c61371779e2e39f6961bdea9d9c5d995433b918d8"},
+    {file = "editdistance-0.6.0-cp35-cp35m-manylinux1_x86_64.whl", hash = "sha256:13520ce14195f9a35b33e9f73b5b8c392935a1ef83e7128640d6d30ee2121629"},
+    {file = "editdistance-0.6.0-cp35-cp35m-manylinux2010_i686.whl", hash = "sha256:eb0443d0d3197de5858e4837eadcffc7fced50e926ee26c0609d5ac506430bd0"},
+    {file = "editdistance-0.6.0-cp35-cp35m-manylinux2010_x86_64.whl", hash = "sha256:bb0a4409163f5a1056b0fa7bc18ebdd028c9d87da1f127b58ba1746f0d853c68"},
+    {file = "editdistance-0.6.0-cp35-cp35m-manylinux2014_aarch64.whl", hash = "sha256:d6347f9aa3daec159225bfe19706a7da2e739059acb861e69e4ab322b748c912"},
+    {file = "editdistance-0.6.0-cp35-cp35m-win32.whl", hash = "sha256:a12dd2b75c788011ddfecf45a4918f618f1ae35ae28b2641992291ba5b5115ea"},
+    {file = "editdistance-0.6.0-cp35-cp35m-win_amd64.whl", hash = "sha256:18838a10c4ae3bb824eef16816bf355e0063821673e5388cb9eeb27dcd497b55"},
+    {file = "editdistance-0.6.0-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:773f7c02c0134ebf7609b59b5fac5516ce77455425ea45a0134dfd39bbf6b32a"},
+    {file = "editdistance-0.6.0-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:9c77c2213ee5e483461c41fa5bb78935804bc0cfefc7c55a6288bf3cda78bd23"},
+    {file = "editdistance-0.6.0-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:a14c791ab16060ac7022cb772ef32badda11efd47b0b7e266560133224a7ee2c"},
+    {file = "editdistance-0.6.0-cp36-cp36m-manylinux2010_i686.whl", hash = "sha256:90f4be26eebac9dda2b383f380937a37136b54fb070b0029b0a2c0d0709fe69d"},
+    {file = "editdistance-0.6.0-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:669046264513e16a6520e48805b2c3482664fcc5b71036b4c50428db18cdede9"},
+    {file = "editdistance-0.6.0-cp36-cp36m-manylinux2014_aarch64.whl", hash = "sha256:f8ec691bc6a9037de2ee41cb5e4d91fb04b3a957b21858dd61620b30f230c427"},
+    {file = "editdistance-0.6.0-cp36-cp36m-win32.whl", hash = "sha256:22ccb1ca335c827a2bec374484da4bb3b3462d12e9d0165f770804736ecd8d16"},
+    {file = "editdistance-0.6.0-cp36-cp36m-win_amd64.whl", hash = "sha256:4d37db8e9c4284a20e2ffe02bb22689de4e0f0b1fca00896bf4ec548c60f6896"},
+    {file = "editdistance-0.6.0-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:b5ef8a26c393ddf5d3d96c85cc0cbe5ba4ceb004854ef44807d95852f44529b1"},
+    {file = "editdistance-0.6.0-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:9fce3717cc7ec5aa9809ec3fc9485aff6a527db65e917d00ef267c77aeb3f21a"},
+    {file = "editdistance-0.6.0-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:3077f2081f0211c45dd6d974be6bc3d184206c2c27277d33d2a66c4e07cea3ec"},
+    {file = "editdistance-0.6.0-cp37-cp37m-manylinux2010_i686.whl", hash = "sha256:f33a01fdf0c6b78cca14474bdc2d50f7905d14900c61c074e0c4137636564769"},
+    {file = "editdistance-0.6.0-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:0c30e3f823498ae710a24da78135865e920a82f323aacffbc8e74a01c4abdd10"},
+    {file = "editdistance-0.6.0-cp37-cp37m-manylinux2014_aarch64.whl", hash = "sha256:b5e66b481c6326bdb420f709849ea0ab625606d277d0ab9dd4cba62385068e85"},
+    {file = "editdistance-0.6.0-cp37-cp37m-win32.whl", hash = "sha256:1ebbc76bfba6ddea90f2ce450d0b5e81fe532f65d691bfed811667a569f24ce6"},
+    {file = "editdistance-0.6.0-cp37-cp37m-win_amd64.whl", hash = "sha256:4f8bbdeffe9743f2d1ca851f28ae61479ea4485a7dceb4e5f0d295ad64b79c5b"},
+    {file = "editdistance-0.6.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:c7c1cb24c429c5dd8bf9c4d1e73b4c7ad6428582ba679a348cc40415faf7e95a"},
+    {file = "editdistance-0.6.0-cp38-cp38-manylinux1_i686.whl", hash = "sha256:9d9b81279578746461192813b69df93424081bc57c11415de8808c1b15b08304"},
+    {file = "editdistance-0.6.0-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:c43069763071ec233c0dbfaf36880b12aac75d581f5531b18a3091cd9ba76055"},
+    {file = "editdistance-0.6.0-cp38-cp38-manylinux2010_i686.whl", hash = "sha256:df9bbb24f7bc14784c8c7677c0252ee0c86aa661d9b170086c52b586385eaeb0"},
+    {file = "editdistance-0.6.0-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:e8cf38d54709ec22b80193e3da1d866caaace9f91678c1fd647ad41369721870"},
+    {file = "editdistance-0.6.0-cp38-cp38-manylinux2014_aarch64.whl", hash = "sha256:44799bcacf4591e65806f8117b4b4f163a74598fbc909cbcdaf350435fb313c6"},
+    {file = "editdistance-0.6.0-cp38-cp38-win32.whl", hash = "sha256:af6ebf293259541ce561d4abfacdf704e2148384728f7e8151c850cb9d438333"},
+    {file = "editdistance-0.6.0-cp38-cp38-win_amd64.whl", hash = "sha256:7c439122059a4bb4aec64de44239346bf3874311036edf3e078631e4015df3bc"},
+    {file = "editdistance-0.6.0-cp39-cp39-macosx_10_9_universal2.whl", hash = "sha256:cd249dc2a1637dfa639c86e26b92ac88a49a16774e18c1b37035d5aee310720b"},
+    {file = "editdistance-0.6.0-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:ff423ae3dcf694fa1e62681cc73c373e6956ac6836783634e35ebeebacc34cde"},
+    {file = "editdistance-0.6.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:e83a8e475cfa4bd025935ac5a57d1af6e9e2992951c51f30292caa9ff730b04a"},
+    {file = "editdistance-0.6.0-cp39-cp39-manylinux1_i686.whl", hash = "sha256:0cdab02a08524f9ca023c131fcca358ca5a9c1e692ac711e2199f7f3bdaaff91"},
+    {file = "editdistance-0.6.0-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:ed8706638de00e2045ce711ec36d30bd82620c9ab5205312aedff1387bc0d432"},
+    {file = "editdistance-0.6.0-cp39-cp39-manylinux2010_i686.whl", hash = "sha256:6985b53b3e0ae6990f2c411ff8295acdf76659c4f6ce26a2b960bedd3a0c8f8f"},
+    {file = "editdistance-0.6.0-cp39-cp39-manylinux2010_x86_64.whl", hash = "sha256:0e83b16092e6509a32c339cb9da0a55f2da9bb0dc17d81f56f920875d8f2c21c"},
+    {file = "editdistance-0.6.0-cp39-cp39-manylinux2014_aarch64.whl", hash = "sha256:a65d23eb505e8787a68f49fa5b7d8e156917026390d6aca48b09d52ae2fac751"},
+    {file = "editdistance-0.6.0-cp39-cp39-win32.whl", hash = "sha256:ca336ac5a83f601d57ce814fda7690188089df45c1e59c5721920ab9ce26c6c2"},
+    {file = "editdistance-0.6.0-cp39-cp39-win_amd64.whl", hash = "sha256:0789fbfc015ecc0ecafd08f6a70148a3da3319dbccddc9353c2a8d73ecebcd1c"},
+    {file = "editdistance-0.6.0-pp36-pypy36_pp73-macosx_10_9_x86_64.whl", hash = "sha256:b1d517a79f6c85fefb9a021d12d2871dbcf5e4618805e43afc2e556b2b5eb5ee"},
+    {file = "editdistance-0.6.0-pp36-pypy36_pp73-manylinux1_x86_64.whl", hash = "sha256:6c6a37b3aec594c74a5ec548d7637558c3e6776541ba8ce9ae0f50f592cd0730"},
+    {file = "editdistance-0.6.0-pp36-pypy36_pp73-manylinux2010_x86_64.whl", hash = "sha256:9d2f87a6c6930e07ac22d0b6e03e7a89a227f8eb123d30a7e025266fdd422be3"},
+    {file = "editdistance-0.6.0-pp36-pypy36_pp73-win32.whl", hash = "sha256:8444d570eb565f5a4e0ac7822a1c360927dd8beba1eac68a0fff42f9f5e5f6ef"},
+    {file = "editdistance-0.6.0-pp37-pypy37_pp73-macosx_10_9_x86_64.whl", hash = "sha256:ecd1fd56d82a06bc217bbcf835d28920d989f464fcf72e23a34f8ce9a93558f7"},
+    {file = "editdistance-0.6.0-pp37-pypy37_pp73-manylinux1_x86_64.whl", hash = "sha256:f525b7eef5686ee73a47ff8a39ce7c7a1765592df36ba0ceee30fb128ad03650"},
+    {file = "editdistance-0.6.0-pp37-pypy37_pp73-manylinux2010_x86_64.whl", hash = "sha256:0ea7576c3173b27413d8200c00e69659149f8963be5fff8c2f37a05d619c1440"},
+    {file = "editdistance-0.6.0-pp37-pypy37_pp73-win32.whl", hash = "sha256:a5750d11aa7eb960f0524e49a3fa2f941ba491cf18afc80a407405295ce6ab0b"},
+    {file = "editdistance-0.6.0.tar.gz", hash = "sha256:82de4fb7c6a87c7c2978e5f509dc790e8657b264edbaf87ca6869e2022aa220e"},
 ]
 importlib-metadata = [
     {file = "importlib_metadata-4.11.4-py3-none-any.whl", hash = "sha256:c58c8eb8a762858f49e18436ff552e83914778e50e9d2f1660535ffb364552ec"},
