@@ -142,7 +142,10 @@ class Pronounce2Word(Word2Pronounce):
     def find_same(self,x):
         han = self.to_han(x)
         same = self.han2word(han)
-        same.remove(x)
+        try:
+            same.remove(x)
+        except:
+            pass
         return same
     
     def find_similar(self,x):
@@ -154,21 +157,30 @@ class Pronounce2Word(Word2Pronounce):
             similar_results = self.han2word(new_han)
             out += similar_results
         out = list(set(out))
-        out.remove(x)
+        try:
+            out.remove(x)
+        except:
+            pass
         return out
     
     def find_similar_vocab(self,vocab):
         vocab_pronounces = [re.sub('[2-5]',"",self.to_han(word)) for word in vocab]
         vp_key = '-'.join(vocab_pronounces)
         similar = self.sc_dict_han_no_tune_map[vp_key]
-        similar.remove(vocab)
+        try:
+            similar.remove(x)
+        except:
+            pass
         return similar
     
     def find_same_vocab(self,vocab):
         vocab_pronounces = [self.to_han(word) for word in vocab]
         vp_key = '-'.join(vocab_pronounces)
         same = self.sc_dict_han_map[vp_key]
-        same.remove(vocab)
+        try:
+            same.remove(x)
+        except:
+            pass
         return same
 
     @lru_cache(maxsize=200)
