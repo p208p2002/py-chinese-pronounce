@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "py-chinese-pronounce"
-version = "0.1.5"
+version = "0.1.6"
 description = "文字/漢語發音/注音互轉。相似發聲字/單詞。"
 authors = ["Philip Huang <p208p2002@gmail.com>"]
 include = ["py_chinese_pronounce/*.txt"]
@@ -9,10 +9,10 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.6.9"
-editdistance = "^0.6.0"
+Levenshtein = "^0.20.5"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
+pytest = "6.2.5"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
