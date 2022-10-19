@@ -3,6 +3,7 @@ import os
 from collections import defaultdict
 import Levenshtein
 from functools import lru_cache
+import itertools
 
 
 class Word2Pronounce():
@@ -83,6 +84,28 @@ class Word2Pronounce():
 
     def to_han(self, x):
         return self._chewin2han(self.to_chewin(x))
+    
+    def char_pronounce_similar(self, a, b):
+        """
+        字元發音相似(0~1)
+        """
+        try:
+            ap = self.to_han(a)
+            bp = self.to_han(b)
+        except:
+            return 0.0
+        edit_dis = Levenshtein.distance(ap, bp)
+        length = max(len(ap), len(bp))
+        return 1.0 - edit_dis/length
+
+    def sent_pronounce_similar(self, sentence_a, sentence_b):
+        """
+        句發音相似(0~1)
+        """
+        score = 0.0
+        for a, b in zip(sentence_a, sentence_b):
+            score += self.char_pronounce_similar(a, b)
+        return score/max(len(sentence_a), len(sentence_b))
 
 
 class Pronounce2Word(Word2Pronounce):
@@ -169,12 +192,15 @@ class Pronounce2Word(Word2Pronounce):
         return out
 
     def find_similar_vocab(self, vocab):
+        """
+        去除聲調找相似
+        """
         vocab_pronounces = [re.sub('[2-5]', "", self.to_han(word))
                             for word in vocab]
         vp_key = '-'.join(vocab_pronounces)
         similar = self.sc_dict_han_no_tune_map[vp_key]
         try:
-            similar.remove(x)
+            similar.remove(vocab)
         except:
             pass
         return similar
@@ -184,12 +210,41 @@ class Pronounce2Word(Word2Pronounce):
         vp_key = '-'.join(vocab_pronounces)
         same = self.sc_dict_han_map[vp_key]
         try:
-            same.remove(x)
+            same.remove(vocab)
         except:
             pass
         return same
+    
+    def find_similar_vocab_level(self, vocab, level=1):
+        """
+        使用編輯距離找相似詞
+        """
+        vocab_no_tune_pronounces = [re.sub('[2-5]', "", self.to_han(word)) for word in vocab]
+        similar_han_pronounces = []
+        for char_han_pronounce in vocab_no_tune_pronounces:
+            similar_hans = self._find_similar_han_pronounces(char_han_pronounce,level=level)
+            similar_hans = list(set([re.sub('[2-5]', "", x) for x in similar_hans])) # clear tune
+            similar_han_pronounces.append(similar_hans)
+        
+        vp_keys = list(itertools.product(*similar_han_pronounces))
+        vp_keys = ['-'.join(x) for x in vp_keys]
 
-    @lru_cache(maxsize=200)
+        similar = []
+        for vp_key in vp_keys:
+            _find_similar = self.sc_dict_han_no_tune_map[vp_key]
+            similar += _find_similar
+        
+        try:
+            similar.remove(vocab)
+        except:
+            pass
+
+        similar.sort(key=lambda x:self.sent_pronounce_similar(x,vocab),reverse=True)
+    
+        return similar
+
+
+    @lru_cache(maxsize=500)
     def _find_similar_han_pronounces(self, han, level=1):
         out = []
         for compare_han in self.han2word_map.keys():
