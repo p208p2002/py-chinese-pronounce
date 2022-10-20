@@ -29,9 +29,7 @@ jobs:
     - name: run test
       run: poetry run pytest tests
     - name: build docs
-      run: |
-        pip install sphinx
-        cd docs && make html
+      run: sh build_docs.sh
     - name: deploy docs
       uses: peaceiris/actions-gh-pages@v3
       with:
