@@ -215,7 +215,7 @@ class Pronounce2Word(Word2Pronounce):
             pass
         return same
     
-    def find_similar_vocab_level(self, vocab, level=1):
+    def find_similar_vocab_level(self, vocab, level=1,_limit_search_keys=1000000):
         """
         使用編輯距離找相似詞
         """
@@ -225,8 +225,8 @@ class Pronounce2Word(Word2Pronounce):
             similar_hans = self._find_similar_han_pronounces(char_han_pronounce,level=level)
             similar_hans = list(set([re.sub('[2-5]', "", x) for x in similar_hans])) # clear tune
             similar_han_pronounces.append(similar_hans)
-        
-        vp_keys = list(itertools.product(*similar_han_pronounces))
+
+        vp_keys = itertools.islice(itertools.product(*similar_han_pronounces,_limit_search_keys))
         vp_keys = ['-'.join(x) for x in vp_keys]
 
         similar = []
