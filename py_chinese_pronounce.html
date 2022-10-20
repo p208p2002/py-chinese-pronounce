@@ -42,12 +42,276 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">py_chinese_pronounce</span> <span class="kn">import</span> <span class="n">Word2Pronounce</span>
 </pre></div>
 </div>
+<span class="target" id="module-py_chinese_pronounce.core"></span><dl class="py class">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Word2Pronounce">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Word2Pronounce</span></span><a class="headerlink" href="#py_chinese_pronounce.core.Word2Pronounce" title="本定義的永久連結">¶</a></dt>
+<dd><p>文字轉換發音</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Word2Pronounce._chewin2han">
+<span class="sig-name descname"><span class="pre">_chewin2han</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chewin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Word2Pronounce._chewin2han" title="本定義的永久連結">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Word2Pronounce._cns2chewin">
+<span class="sig-name descname"><span class="pre">_cns2chewin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uni</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Word2Pronounce._cns2chewin" title="本定義的永久連結">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Word2Pronounce._cns2uni">
+<span class="sig-name descname"><span class="pre">_cns2uni</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Word2Pronounce._cns2uni" title="本定義的永久連結">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Word2Pronounce._cns2word">
+<span class="sig-name descname"><span class="pre">_cns2word</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Word2Pronounce._cns2word" title="本定義的永久連結">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Word2Pronounce._uni2cns">
+<span class="sig-name descname"><span class="pre">_uni2cns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uni</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Word2Pronounce._uni2cns" title="本定義的永久連結">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Word2Pronounce._uni2word">
+<span class="sig-name descname"><span class="pre">_uni2word</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uni</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Word2Pronounce._uni2word" title="本定義的永久連結">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Word2Pronounce.char_pronounce_similar">
+<span class="sig-name descname"><span class="pre">char_pronounce_similar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Word2Pronounce.char_pronounce_similar" title="本定義的永久連結">¶</a></dt>
+<dd><p>字元發音相似(0~1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parm a<span class="colon">:</span></dt>
+<dd class="field-odd"><p>單一字元(長度:1)</p>
+</dd>
+<dt class="field-even">Parm b<span class="colon">:</span></dt>
+<dd class="field-even"><p>單一字元(長度:1)</p>
+</dd>
+<dt class="field-odd">Retrun<span class="colon">:</span></dt>
+<dd class="field-odd"><p>發音相似度 (0~1)</p>
+</dd>
+<dt class="field-even">回傳型別<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Word2Pronounce.sent_pronounce_similar">
+<span class="sig-name descname"><span class="pre">sent_pronounce_similar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentence_a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sentence_b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Word2Pronounce.sent_pronounce_similar" title="本定義的永久連結">¶</a></dt>
+<dd><p>句發音相似(0~1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parm sentence_a<span class="colon">:</span></dt>
+<dd class="field-odd"><p>句字</p>
+</dd>
+<dt class="field-even">Parm sentence_b<span class="colon">:</span></dt>
+<dd class="field-even"><p>句子</p>
+</dd>
+<dt class="field-odd">Retrun<span class="colon">:</span></dt>
+<dd class="field-odd"><p>發音相似度 (0~1)</p>
+</dd>
+<dt class="field-even">回傳型別<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Word2Pronounce.to_chewin">
+<span class="sig-name descname"><span class="pre">to_chewin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Word2Pronounce.to_chewin" title="本定義的永久連結">¶</a></dt>
+<dd><p>字轉注音</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parm x<span class="colon">:</span></dt>
+<dd class="field-odd"><p>單一字元(長度:1)</p>
+</dd>
+<dt class="field-even">Retrun<span class="colon">:</span></dt>
+<dd class="field-even"><p>注音</p>
+</dd>
+<dt class="field-odd">回傳型別<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Word2Pronounce.to_han">
+<span class="sig-name descname"><span class="pre">to_han</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Word2Pronounce.to_han" title="本定義的永久連結">¶</a></dt>
+<dd><p>字轉漢語發音</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parm x<span class="colon">:</span></dt>
+<dd class="field-odd"><p>單一字元(長度:1)</p>
+</dd>
+<dt class="field-even">Retrun<span class="colon">:</span></dt>
+<dd class="field-even"><p>漢語拼音</p>
+</dd>
+<dt class="field-odd">回傳型別<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="pronounce2word">
 <h2>Pronounce2Word<a class="headerlink" href="#pronounce2word" title="本標頭的永久連結">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">py_chinese_pronounce</span> <span class="kn">import</span> <span class="n">Pronounce2Word</span>
 </pre></div>
 </div>
+<span class="target" id="module-0"></span><dl class="py class">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Pronounce2Word">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Pronounce2Word</span></span><a class="headerlink" href="#py_chinese_pronounce.core.Pronounce2Word" title="本定義的永久連結">¶</a></dt>
+<dd><p>發音轉/找文字</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Pronounce2Word._find_similar_han_pronounces">
+<span class="sig-name descname"><span class="pre">_find_similar_han_pronounces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">han</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Pronounce2Word._find_similar_han_pronounces" title="本定義的永久連結">¶</a></dt>
+<dd><p>漢語發音找相似漢語發音</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parm han<span class="colon">:</span></dt>
+<dd class="field-odd"><p>漢語發音</p>
+</dd>
+<dt class="field-even">Parm level<span class="colon">:</span></dt>
+<dd class="field-even"><p>最大編輯距離</p>
+</dd>
+<dt class="field-odd">Retrun<span class="colon">:</span></dt>
+<dd class="field-odd"><p>相似漢語發音</p>
+</dd>
+<dt class="field-even">回傳型別<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Pronounce2Word.chewin2word">
+<span class="sig-name descname"><span class="pre">chewin2word</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Pronounce2Word.chewin2word" title="本定義的永久連結">¶</a></dt>
+<dd><p>注音找文字</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parm x<span class="colon">:</span></dt>
+<dd class="field-odd"><p>注音拼音（單一文字長度）</p>
+</dd>
+<dt class="field-even">Retrun<span class="colon">:</span></dt>
+<dd class="field-even"><p>相同發音文字</p>
+</dd>
+<dt class="field-odd">回傳型別<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Pronounce2Word.find_same">
+<span class="sig-name descname"><span class="pre">find_same</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Pronounce2Word.find_same" title="本定義的永久連結">¶</a></dt>
+<dd><p>文字找相同發音文字</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parm x<span class="colon">:</span></dt>
+<dd class="field-odd"><p>單一文字</p>
+</dd>
+<dt class="field-even">Retrun<span class="colon">:</span></dt>
+<dd class="field-even"><p>相同發音文字</p>
+</dd>
+<dt class="field-odd">回傳型別<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Pronounce2Word.find_same_vocab">
+<span class="sig-name descname"><span class="pre">find_same_vocab</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vocab</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Pronounce2Word.find_same_vocab" title="本定義的永久連結">¶</a></dt>
+<dd><p>詞彙找相同發音詞彙；去除聲調
+例如：堵住-&gt;賭注。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parm vocab<span class="colon">:</span></dt>
+<dd class="field-odd"><p>詞彙</p>
+</dd>
+<dt class="field-even">Retrun<span class="colon">:</span></dt>
+<dd class="field-even"><p>相同音詞彙</p>
+</dd>
+<dt class="field-odd">回傳型別<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Pronounce2Word.find_similar">
+<span class="sig-name descname"><span class="pre">find_similar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Pronounce2Word.find_similar" title="本定義的永久連結">¶</a></dt>
+<dd><p>文字找相似發音文字（去除聲調）</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parm x<span class="colon">:</span></dt>
+<dd class="field-odd"><p>單一文字</p>
+</dd>
+<dt class="field-even">Retrun<span class="colon">:</span></dt>
+<dd class="field-even"><p>相似音文字</p>
+</dd>
+<dt class="field-odd">回傳型別<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Pronounce2Word.find_similar_vocab">
+<span class="sig-name descname"><span class="pre">find_similar_vocab</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vocab</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Pronounce2Word.find_similar_vocab" title="本定義的永久連結">¶</a></dt>
+<dd><p>詞彙找相似發音詞彙；去除聲調
+例如：汽車-&gt;騎車。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parm vocab<span class="colon">:</span></dt>
+<dd class="field-odd"><p>詞彙</p>
+</dd>
+<dt class="field-even">Retrun<span class="colon">:</span></dt>
+<dd class="field-even"><p>相似音詞彙</p>
+</dd>
+<dt class="field-odd">回傳型別<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Pronounce2Word.find_similar_vocab_level">
+<span class="sig-name descname"><span class="pre">find_similar_vocab_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vocab</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_limit_search_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Pronounce2Word.find_similar_vocab_level" title="本定義的永久連結">¶</a></dt>
+<dd><p>詞彙找相似發音詞彙；編輯距離
+例如：清晨-&gt;傾城。</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parm vocab<span class="colon">:</span></dt>
+<dd class="field-odd"><p>詞彙</p>
+</dd>
+<dt class="field-even">Parm level<span class="colon">:</span></dt>
+<dd class="field-even"><p>允許每一個字最大的發音編輯距離</p>
+</dd>
+<dt class="field-odd">Parm _limit_search_keys<span class="colon">:</span></dt>
+<dd class="field-odd"><p>搜尋的發音組合上限</p>
+</dd>
+<dt class="field-even">Retrun<span class="colon">:</span></dt>
+<dd class="field-even"><p>相似音詞彙</p>
+</dd>
+<dt class="field-odd">回傳型別<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_chinese_pronounce.core.Pronounce2Word.han2word">
+<span class="sig-name descname"><span class="pre">han2word</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_chinese_pronounce.core.Pronounce2Word.han2word" title="本定義的永久連結">¶</a></dt>
+<dd><p>漢語拼音找文字</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parm x<span class="colon">:</span></dt>
+<dd class="field-odd"><p>漢語拼音（單一文字長度）</p>
+</dd>
+<dt class="field-even">Retrun<span class="colon">:</span></dt>
+<dd class="field-even"><p>相同發音文字</p>
+</dd>
+<dt class="field-odd">回傳型別<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 
