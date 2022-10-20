@@ -2,3 +2,5 @@ __py*/
 .py*/
 test.py
 dist/
+docs/node_modules/*
+docs/build
