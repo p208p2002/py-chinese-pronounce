@@ -8,7 +8,7 @@ Welcome to Python Chinese Pronounce's documentation!
 
 
 連結
-----
+-----------
 
 GitHub: https://github.com/p208p2002/py-chinese-pronounce
 
@@ -16,14 +16,14 @@ PyPI: https://pypi.org/project/py-chinese-pronounce/
 
 
 安裝
-----
+-----------
 
 .. code-block:: console
 
    $ pip install py-chinese-pronounce
 
 使用方法
--------
+-----------
 
 .. code-block:: Python
 
@@ -35,7 +35,7 @@ PyPI: https://pypi.org/project/py-chinese-pronounce/
 
 
 API文檔
-------
+-----------
 
 .. toctree::
    py_chinese_pronounce
