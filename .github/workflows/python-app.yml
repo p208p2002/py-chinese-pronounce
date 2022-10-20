@@ -33,8 +33,8 @@ jobs:
         pip install sphinx
         cd docs && make html
     - name: deploy docs
-      uses: JamesIves/github-pages-deploy-action@v4
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        folder: docs/build/html # The folder the action should deploy.
+        publish_dir: ./docs/build/html # The folder the action should deploy.
         github_token: ${{ secrets.GH_TOKEN }}
 
