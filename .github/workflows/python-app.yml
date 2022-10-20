@@ -26,5 +26,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install poetry
         poetry install
+    - name: run test
+      run: poetry run pytest tests
     - name: build docs
-      run: sh build_docs.sh
+      run: |
+        pip install sphinx
+        cd docs && make html
