@@ -84,8 +84,7 @@ class Word2Pronounce():
         """
         字轉注音
 
-        :parm x: 單一字元(長度:1)
-        :type x: str
+        :parm str x: 單一字元(長度:1)
         :retrun: 注音
         :rtype: str
         """
@@ -98,7 +97,6 @@ class Word2Pronounce():
         字轉漢語發音
 
         :parm x: 單一字元(長度:1)
-        :type x: str
         :retrun: 漢語拼音
         :rtype: str
         """
@@ -109,9 +107,7 @@ class Word2Pronounce():
         字元發音相似(0~1)
 
         :parm a: 單一字元(長度:1)
-        :type a: str
         :parm b: 單一字元(長度:1)
-        :type b: str
         :retrun: 發音相似度 (0~1)
         :rtype: float
         """
@@ -129,9 +125,7 @@ class Word2Pronounce():
         句發音相似(0~1)
 
         :parm sentence_a: 句字
-        :type sentence_a: str
         :parm sentence_b: 句子
-        :type sentence_b: str
         :retrun: 發音相似度 (0~1)
         :rtype: float
         """
@@ -202,7 +196,6 @@ class Pronounce2Word(Word2Pronounce):
         注音找文字
 
         :parm x: 注音拼音（單一文字長度）
-        :type x: str
         :retrun: 相同發音文字
         :rtype: list[str]
         """
@@ -213,7 +206,6 @@ class Pronounce2Word(Word2Pronounce):
         漢語拼音找文字
 
         :parm x: 漢語拼音（單一文字長度）
-        :type x: str
         :retrun: 相同發音文字
         :rtype: list[str]
         """
@@ -224,7 +216,6 @@ class Pronounce2Word(Word2Pronounce):
         文字找相同發音文字
 
         :parm x: 單一文字
-        :type x: str
         :retrun: 相同發音文字
         :rtype: list[str]
         """
@@ -241,7 +232,6 @@ class Pronounce2Word(Word2Pronounce):
         文字找相似發音文字（去除聲調）
 
         :parm x: 單一文字
-        :type x: str
         :retrun: 相似音文字
         :rtype: list[str]
         """
@@ -265,7 +255,6 @@ class Pronounce2Word(Word2Pronounce):
         例如：汽車->騎車。
 
         :parm vocab: 詞彙
-        :type vocad: str
         :retrun: 相似音詞彙
         :rtype: list[str]
         """
@@ -285,7 +274,6 @@ class Pronounce2Word(Word2Pronounce):
         例如：堵住->賭注。
 
         :parm vocab: 詞彙
-        :type vocad: str
         :retrun: 相同音詞彙
         :rtype: list[str]
         """
@@ -304,11 +292,8 @@ class Pronounce2Word(Word2Pronounce):
         例如：清晨->傾城。
 
         :parm vocab: 詞彙
-        :type vocad: str
         :parm level: 允許每一個字最大的發音編輯距離
-        :type level: int
         :parm _limit_search_keys: 搜尋的發音組合上限
-        :type _limit_search_keys: iny
         :retrun: 相似音詞彙
         :rtype: list[str]
         """
@@ -343,9 +328,7 @@ class Pronounce2Word(Word2Pronounce):
         漢語發音找相似漢語發音
 
         :parm han: 漢語發音
-        :type han: str
         :parm level: 最大編輯距離
-        :type level: int
         :retrun: 相似漢語發音
         :rtype: list[str]
         """

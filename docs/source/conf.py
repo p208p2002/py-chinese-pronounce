@@ -20,6 +20,9 @@ extensions = [
     'sphinx.ext.duration',
     'sphinx.ext.doctest',
     'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
+    'myst_parser',
+    'sphinx_autodoc_typehints'
 ]
 
 templates_path = ['_templates']
@@ -34,3 +37,4 @@ html_theme = 'alabaster'
 html_static_path = ['_static']
 
 add_module_names = False
+napoleon_use_param = True

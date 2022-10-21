@@ -7,34 +7,11 @@ Welcome to Python Chinese Pronounce's documentation!
 ====================================================
 
 
-連結
------------
-
 GitHub: https://github.com/p208p2002/py-chinese-pronounce
 
 PyPI: https://pypi.org/project/py-chinese-pronounce/
 
-
-安裝
------------
-
-.. code-block:: console
-
-   $ pip install py-chinese-pronounce
-
-使用方法
------------
-
-.. code-block:: Python
-
-   from py_chinese_pronounce import Word2Pronounce,Pronounce2Word
-   w2p = Word2Pronounce()
-   p2w = Pronounce2Word()
-
-| 基本使用方法: https://github.com/p208p2002/py-chinese-pronounce/blob/main/README.md
-
-
-API文檔
+文檔
 -----------
 
 .. toctree::
@@ -42,9 +19,7 @@ API文檔
    :maxdepth: 2
    :caption: Contents:
 
-Indices and tables
-==================
+.. include:: ../../README.md
+   :parser: myst_parser.sphinx_
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+
