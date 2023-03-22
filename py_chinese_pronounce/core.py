@@ -4,7 +4,9 @@ from collections import defaultdict
 import Levenshtein
 from functools import lru_cache
 import itertools
-
+import pandas
+import  ahocorasick    
+from typing import List
 
 class Word2Pronounce():
     """
@@ -56,6 +58,40 @@ class Word2Pronounce():
         for chewin, *pinyin in self._data:
             self.chewin2han_map[chewin] = pinyin[0]
 
+        
+        # 詞彙注音字典
+        self.vocab_pronounce_df = pandas.read_excel(os.path.join(os.path.dirname(__file__), 'dict_concised_2014_20230112.xlsx'))
+        self.vocab_pronounce_df = self.vocab_pronounce_df.set_index('字詞名')
+        vocabs = self.vocab_pronounce_df.index.to_list()
+        self.ac_tree = ahocorasick.AhoCorasick(*vocabs) # AC自動機
+    
+    
+    def sent_to_chewin(self,x)->List[str]:
+        results = list(self.ac_tree.search(x,True))
+        results.sort(key=lambda x:x[-1][1]+(x[-1][1]-x[-1][0])/10)
+        out = [None] * len(x)
+        
+        for r in results:
+            words = r[0]
+            w_range = r[-1]
+
+            chewin = self.vocab_pronounce_df.loc[words]['注音一式']
+            if type(chewin) == str:
+                chewin = chewin.strip().split()                
+            else:
+                chewin = chewin.to_list()
+            
+            chewin_idx = 0
+            for i in range(w_range[0],w_range[1]):
+                out[i] = chewin[chewin_idx]
+                chewin_idx += 1
+        
+        for i,(o,char) in enumerate(zip(out,x)):
+            if o == None:
+                out[i] = self.to_chewin(char)
+        
+        return out
+            
     def _word2unicode(self, x):
         uni = hex(ord(x))
         uni = re.sub("^0x", "", uni).upper()
