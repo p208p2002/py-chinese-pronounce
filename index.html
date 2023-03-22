@@ -59,7 +59,8 @@
 <li><p>尋找相似、相同發聲字/單詞</p></li>
 </ul>
 <blockquote>
-<div><p>資料來源：<a class="reference external" href="https://data.gov.tw/dataset/5961">政府開放資料</a>, <a class="reference external" href="https://github.com/samejack/sc-dictionary">超齊百萬字典檔</a></p>
+<div><p>資料來源：<a class="reference external" href="https://data.gov.tw/dataset/5961">政府開放資料</a>, <a class="reference external" href="https://github.com/samejack/sc-dictionary">超齊百萬字典檔</a>, <a class="reference external" href="https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/respub/dict_concised_download.html">教育部國語辭典公眾授權網
+</a></p>
 </div></blockquote>
 <section id="install">
 <h4>Install<a class="headerlink" href="#install" title="本標頭的永久連結">¶</a></h4>
@@ -86,29 +87,39 @@
 </div>
 <section id="word2pronounce">
 <h5>Word2Pronounce<a class="headerlink" href="#word2pronounce" title="本標頭的永久連結">¶</a></h5>
-<p>僅支援<em>單一字元</em>轉換</p>
 <section id="id1">
-<h6>文字轉注音<a class="headerlink" href="#id1" title="本標頭的永久連結">¶</a></h6>
+<h6>字元轉注音<a class="headerlink" href="#id1" title="本標頭的永久連結">¶</a></h6>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">w2p</span><span class="o">.</span><span class="n">to_chewin</span><span class="p">(</span><span class="s2">&quot;我&quot;</span><span class="p">)</span> <span class="c1"># ㄨㄛˇ</span>
 </pre></div>
 </div>
 </section>
 <section id="id2">
-<h6>文字轉漢語發音<a class="headerlink" href="#id2" title="本標頭的永久連結">¶</a></h6>
+<h6>字元轉漢語發音<a class="headerlink" href="#id2" title="本標頭的永久連結">¶</a></h6>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">w2p</span><span class="o">.</span><span class="n">to_han</span><span class="p">(</span><span class="s2">&quot;我&quot;</span><span class="p">)</span> <span class="c1"># wo3</span>
 </pre></div>
 </div>
 </section>
 <section id="id3">
-<h6>發音相似度比較<a class="headerlink" href="#id3" title="本標頭的永久連結">¶</a></h6>
+<h6>句子轉注音<a class="headerlink" href="#id3" title="本標頭的永久連結">¶</a></h6>
+<div class="highlight-pyhon notranslate"><div class="highlight"><pre><span></span>w2p.sent_to_chewin(&quot;你來扮演這個角色&quot;)
+# [&#39;ㄋㄧˇ&#39;, &#39;ㄌㄞˊ&#39;, &#39;ㄅㄢˋ&#39;, &#39;ㄧㄢˇ&#39;, &#39;ㄓㄜˋ&#39;, &#39;˙ㄍㄜ&#39;, &#39;ㄐㄩㄝˊ&#39;, &#39;ㄙㄜˋ&#39;]
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h6>句子轉漢語發音<a class="headerlink" href="#id4" title="本標頭的永久連結">¶</a></h6>
+<p>TODO …</p>
+</section>
+<section id="id5">
+<h6>發音相似度比較<a class="headerlink" href="#id5" title="本標頭的永久連結">¶</a></h6>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">w2p</span><span class="o">.</span><span class="n">char_pronounce_similar</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
 <span class="n">w2p</span><span class="o">.</span><span class="n">sent_pronounce_similar</span><span class="p">(</span><span class="n">sent_a</span><span class="p">,</span> <span class="n">sent_b</span><span class="p">)</span>
 <span class="c1"># 數值區間落在[0-1]</span>
 </pre></div>
 </div>
 </section>
-<section id="id4">
-<h6>其他轉換<a class="headerlink" href="#id4" title="本標頭的永久連結">¶</a></h6>
+<section id="id6">
+<h6>其他轉換<a class="headerlink" href="#id6" title="本標頭的永久連結">¶</a></h6>
 <ul class="simple">
 <li><p>Word2Pronounce._word2unicode(self, x)</p></li>
 <li><p>Word2Pronounce._uni2word(self,uni)</p></li>
@@ -122,37 +133,36 @@
 </section>
 <section id="pronounce2word">
 <h5>Pronounce2Word<a class="headerlink" href="#pronounce2word" title="本標頭的永久連結">¶</a></h5>
-<p>詞彙尋功能支援多字元，其餘僅支援<em>單一字元</em>查詢</p>
-<section id="id5">
-<h6>注音找文字<a class="headerlink" href="#id5" title="本標頭的永久連結">¶</a></h6>
+<section id="id7">
+<h6>注音找字元<a class="headerlink" href="#id7" title="本標頭的永久連結">¶</a></h6>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p2w</span><span class="o">.</span><span class="n">chewin2word</span><span class="p">(</span><span class="s2">&quot;ㄨㄛˇ&quot;</span><span class="p">)</span>
 <span class="c1"># [&#39;䰀&#39;, &#39;婑&#39;, &#39;捰&#39;, &#39;㦱&#39;, &#39;我&#39;, &#39;䂺&#39;]</span>
 </pre></div>
 </div>
 </section>
-<section id="id6">
-<h6>漢語發音找文字<a class="headerlink" href="#id6" title="本標頭的永久連結">¶</a></h6>
+<section id="id8">
+<h6>漢語發音找字元<a class="headerlink" href="#id8" title="本標頭的永久連結">¶</a></h6>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p2w</span><span class="o">.</span><span class="n">han2word</span><span class="p">(</span><span class="s2">&quot;wo3&quot;</span><span class="p">)</span>
 <span class="c1"># [&#39;䰀&#39;, &#39;婑&#39;, &#39;捰&#39;, &#39;㦱&#39;, &#39;我&#39;, &#39;䂺&#39;]</span>
 </pre></div>
 </div>
 </section>
-<section id="id7">
-<h6>文字找同發音<a class="headerlink" href="#id7" title="本標頭的永久連結">¶</a></h6>
+<section id="id9">
+<h6>字元找同發音<a class="headerlink" href="#id9" title="本標頭的永久連結">¶</a></h6>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p2w</span><span class="o">.</span><span class="n">find_same</span><span class="p">(</span><span class="s2">&quot;我&quot;</span><span class="p">)</span>
 <span class="c1"># [&#39;䰀&#39;, &#39;婑&#39;, &#39;捰&#39;, &#39;㦱&#39;, &#39;䂺&#39;]</span>
 </pre></div>
 </div>
 </section>
-<section id="id8">
-<h6>文字找近似發音<a class="headerlink" href="#id8" title="本標頭的永久連結">¶</a></h6>
+<section id="id10">
+<h6>字元找近似發音<a class="headerlink" href="#id10" title="本標頭的永久連結">¶</a></h6>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p2w</span><span class="o">.</span><span class="n">find_similar</span><span class="p">(</span><span class="s2">&quot;我&quot;</span><span class="p">)</span>
 <span class="c1"># [&#39;蠖&#39;, &#39;臥&#39;, &#39;䇶&#39;, &#39;䂺&#39;, &#39;䪝&#39;, &#39;捾&#39;, &#39;偓&#39;, &#39;握&#39;, &#39;捰&#39;, &#39;卧&#39;, &#39;雘&#39;, &#39;㦱&#39;, &#39;濣&#39;, &#39;䠎&#39;, &#39;楃&#39;, &#39;沃&#39;, &#39;渥&#39;, &#39;䁊&#39;, &#39;涴&#39;, &#39;幄&#39;, &#39;龌&#39;, &#39;㓇&#39;, &#39;矱&#39;, &#39;斡&#39;, &#39;㠛&#39;, &#39;肟&#39;, &#39;齷&#39;, &#39;仴&#39;, &#39;䰀&#39;, &#39;婑&#39;, &#39;喔&#39;, &#39;腛&#39;, &#39;䀑&#39;]</span>
 </pre></div>
 </div>
 </section>
-<section id="id9">
-<h6>相似發聲單詞<a class="headerlink" href="#id9" title="本標頭的永久連結">¶</a></h6>
+<section id="id11">
+<h6>相似發聲詞<a class="headerlink" href="#id11" title="本標頭的永久連結">¶</a></h6>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p2w</span><span class="o">.</span><span class="n">find_similar_vocab</span><span class="p">(</span><span class="s2">&quot;汽車&quot;</span><span class="p">)</span> <span class="c1"># 去除聲調找相似</span>
 <span class="c1"># [&#39;七尺&#39;, &#39;棋車&#39;, &#39;棋车&#39;, &#39;气车&#39;, &#39;氣車&#39;, &#39;汽车&#39;, &#39;騎車&#39;, &#39;骑车&#39;]</span>
 </pre></div>
@@ -162,15 +172,15 @@
 </pre></div>
 </div>
 </section>
-<section id="id10">
-<h6>相同發聲單詞<a class="headerlink" href="#id10" title="本標頭的永久連結">¶</a></h6>
+<section id="id12">
+<h6>相同發聲詞<a class="headerlink" href="#id12" title="本標頭的永久連結">¶</a></h6>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p2w</span><span class="o">.</span><span class="n">find_same_vocab</span><span class="p">(</span><span class="s2">&quot;汽車&quot;</span><span class="p">)</span>
 <span class="c1"># [&#39;气车&#39;, &#39;氣車&#39;, &#39;汽车&#39;]</span>
 </pre></div>
 </div>
 </section>
-<section id="id11">
-<h6>其他轉換<a class="headerlink" href="#id11" title="本標頭的永久連結">¶</a></h6>
+<section id="id13">
+<h6>其他轉換<a class="headerlink" href="#id13" title="本標頭的永久連結">¶</a></h6>
 <ul>
 <li><p>Pronounce2Word._find_similar_han_pronounces(self,han,level=1)</p>
 <p>尋找相似發音</p>
