@@ -88,7 +88,10 @@ class Word2Pronounce():
         
         for i,(o,char) in enumerate(zip(out,x)):
             if o == None:
-                out[i] = self.to_chewin(char)
+                try:
+                    out[i] = self.to_chewin(char)
+                except:
+                    pass
         
         return out
             
