@@ -76,11 +76,22 @@ class Word2Pronounce():
             w_range = r[-1]
 
             chewin = self.vocab_pronounce_df.loc[words]['注音一式']
+            
             if type(chewin) == str:
                 chewin = chewin.strip().split()                
             else:
                 chewin = chewin.to_list()
             
+            # 當輸入是多音詞時
+            if (len(words) > 1 and len(chewin) > 1 and '\u3000' in chewin[0]) :
+                chewin_pp = self.vocab_pronounce_df.loc[words]['多音排序']
+                if type(chewin_pp) == str:
+                    chewin_pp = chewin_pp.strip().split()
+                else:
+                    chewin_pp = chewin_pp.to_list()
+                idx = chewin_pp.index(min(chewin_pp))
+                chewin = chewin[idx].split("\u3000")
+                
             chewin_idx = 0
             for i in range(w_range[0],w_range[1]):
                 out[i] = chewin[chewin_idx]
@@ -93,6 +104,51 @@ class Word2Pronounce():
                 except:
                     pass
         
+        return out
+
+    def sent_to_han(self,x)->List[str]:
+        results = list(self.ac_tree.search(x,True))
+        results.sort(key=lambda x:x[-1][1]+(x[-1][1]-x[-1][0])/10)
+
+        chewin_list = [None] * len(x)
+        out = [None] * len(x)
+
+        polyphone_check = False
+
+        for r in results:
+            words = r[0]
+            w_range = r[-1]
+            chewin = self.vocab_pronounce_df.loc[words]['注音一式']
+
+            if type(chewin) == str:
+                chewin = chewin.strip().split()
+            else:
+                chewin = chewin.to_list()
+
+            # 當輸入是多音詞時
+            if (len(words) > 1 and len(chewin) > 1 and '\u3000' in chewin[0]) :
+                chewin_pp = self.vocab_pronounce_df.loc[words]['多音排序']
+                if type(chewin_pp) == str:
+                    chewin_pp = chewin_pp.strip().split()
+                else:
+                    chewin_pp = chewin_pp.to_list()
+                idx = chewin_pp.index(min(chewin_pp))
+                chewin = chewin[idx].split("\u3000")
+
+            chewin_idx = 0
+            for i in range(w_range[0],w_range[1]):
+                chewin_list[i] = chewin[chewin_idx]
+                chewin_idx += 1
+
+        for i in range(len(chewin_list)) :
+            out[i] = self._chewin2han(chewin_list[i])
+
+        for i,(o,char) in enumerate(zip(out,x)):
+            if o == None:
+                try:
+                    out[i] = self.to_han(char)
+                except:
+                    pass
         return out
             
     def _word2unicode(self, x):

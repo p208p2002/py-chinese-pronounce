@@ -40,7 +40,11 @@ w2p.sent_to_chewin("你來扮演這個角色")
 ```
 
 #### 句子轉漢語發音
-TODO ...
+```python
+w2p.sent_to_han("你來扮演這個角色")
+# ['ni3', 'lai2', 'ban4', 'yan3', 'zhe4', 'ge5', 'jue2', 'se4']
+```
+> 感謝 @Evanston0624 實作此功能
 
 #### 發音相似度比較
 ```python
