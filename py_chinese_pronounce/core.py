@@ -399,7 +399,7 @@ class Pronounce2Word(Word2Pronounce):
             similar_hans = list(set([re.sub('[2-5]', "", x) for x in similar_hans])) # clear tune
             similar_han_pronounces.append(similar_hans)
 
-        vp_keys = itertools.islice(itertools.product(*similar_han_pronounces,_limit_search_keys))
+        vp_keys = itertools.islice(itertools.product(*similar_han_pronounces),_limit_search_keys)
         vp_keys = ['-'.join(x) for x in vp_keys]
 
         similar = []
