@@ -60,7 +60,7 @@ class Word2Pronounce():
 
         
         # 詞彙注音字典
-        self.vocab_pronounce_df = pandas.read_excel(os.path.join(os.path.dirname(__file__), 'dict_concised_2014_20230112.xlsx'))
+        self.vocab_pronounce_df = pandas.read_excel(os.path.join(os.path.dirname(__file__), 'dict_concised_2014_20240705.xlsx'))
         self.vocab_pronounce_df = self.vocab_pronounce_df.set_index('字詞名')
         vocabs = self.vocab_pronounce_df.index.to_list()
         self.ac_tree = ahocorasick.AhoCorasick(*vocabs) # AC自動機
